@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "https://schema.democratic.guide/country.schema.json",
+  "title": "Country Schema",
+  "description": "Schema describing a country",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Unique identifier for a country",
+      "type": "string"
+    },
+    "location": {
+      "description": "Location of the country",
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "description": "Latitude of the country",
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "longitude": {
+          "description": "Longitude of the country",
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude"
+      ]
+    },
+    "population": {
+      "description": "Population of the country",
+      "type": "number"
+    },
+    "population_year": {
+      "description": "Year at which the population was measured",
+      "type": "number"
+    },
+    "area": {
+      "description": "Area of the country, in km2",
+      "type": "number"
+    },
+    "currency": {
+      "description": "Currency of the country",
+      "type": "string"
+    },
+    "details": {
+      "description": "Details of the country in a given language",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "description": "Language of the description",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the country",
+            "type": "string"
+          },
+          "description": {
+            "description": "Name of the country",
+            "type": "string"
+          },
+          "capital": {
+            "description": "Capital of the country",
+            "type": "string"
+          },
+          
+          "languages": {
+            "description": "Languages spoken in the country",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "capital",
+          "languages"
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "location",
+    "details",
+    "population",
+    "population_year",
+    "area",
+    "currency"
+  ]
+}
