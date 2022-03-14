@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "https://schema.democratic.guide/countries.schema.json",
+    "title": "Countries Schema",
+    "description": "A list of countries available",
+    "type": "object",
+    "properties": {
+        "countries": {
+            "description": "A list of countries available to view",
+            "type": "array",
+            "items": {
+                "description": "Individual country",
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "countries"
+    ]
+}
